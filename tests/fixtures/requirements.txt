@@ -1,0 +1,4 @@
+# Baysöz Labs <baysozlabs@proton.me> — pinned fixture lockfile
+PyYAML==6.0
+urllib3==2.2.3
+requests==2.31.0

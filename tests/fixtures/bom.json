@@ -1,0 +1,18 @@
+{
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "name": "sample-app",
+      "version": "1.0.0"
+    },
+    "authors": [{"name": "Baysöz Labs", "email": "baysozlabs@proton.me"}]
+  },
+  "components": [
+    {"type": "library", "name": "PyYAML", "version": "6.0", "purl": "pkg:pypi/PyYAML@6.0"},
+    {"type": "library", "name": "urllib3", "version": "2.2.3", "purl": "pkg:pypi/urllib3@2.2.3"},
+    {"type": "library", "name": "requests", "version": "2.31.0", "purl": "pkg:pypi/requests@2.31.0"}
+  ]
+}

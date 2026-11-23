@@ -1,0 +1,12 @@
+{
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "name": "sample-app",
+  "comment": "Baysöz Labs <baysozlabs@proton.me>",
+  "packages": [
+    {"name": "PyYAML", "versionInfo": "6.0"},
+    {"name": "urllib3", "versionInfo": "2.2.3"},
+    {"name": "requests", "versionInfo": "2.31.0"}
+  ]
+}

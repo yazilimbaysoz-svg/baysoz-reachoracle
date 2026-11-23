@@ -1,0 +1,15 @@
+# Baysöz Labs <baysozlabs@proton.me> — baysoz-reachoracle
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+*.sarif
+.factory-result.json

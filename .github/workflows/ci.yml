@@ -1,0 +1,37 @@
+# Baysöz Labs <baysozlabs@proton.me> — baysoz-reachoracle CI
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          enable-cache: true
+      - name: Select Python 3.13
+        run: uv python install 3.13
+      - name: Create environment and install project
+        run: |
+          uv venv --python 3.13
+          uv pip install -e .
+          uv pip install pytest ruff semgrep
+      - name: Unit and adversarial tests
+        run: uv run pytest -q
+      - name: Lint gates
+        run: uv run ruff check --select E,F,W,S,B .
+      - name: Security gates
+        run: uv run semgrep --config p/default --error .
+      - name: Live adversarial self-check
+        run: uv run python -m baysoz_reachoracle selftest

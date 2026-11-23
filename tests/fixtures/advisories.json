@@ -1,0 +1,41 @@
+{
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "advisories": [
+    {
+      "id": "PYSEC-RO-2026-0001",
+      "package": "PyYAML",
+      "modules": ["yaml"],
+      "vulnerable_versions": ["<6.0.1"],
+      "fixed_version": "6.0.1",
+      "symbols": ["yaml.load"],
+      "severity": "HIGH",
+      "title": "Unsafe deserialization via yaml.load",
+      "description": "Loading untrusted YAML with the unsafe loader executes embedded Python objects.",
+      "cwe": ["CWE-502"]
+    },
+    {
+      "id": "GHSA-RO-2026-0002",
+      "package": "urllib3",
+      "modules": ["urllib3"],
+      "vulnerable_versions": ["<2.3.0"],
+      "fixed_version": "2.3.0",
+      "symbols": ["urllib3.util.ssl_.create_urllib3_context"],
+      "severity": "MEDIUM",
+      "title": "TLS verification bypass in urllib3 context builder",
+      "description": "A crafted context builder weakens certificate validation.",
+      "cwe": ["CWE-295"]
+    },
+    {
+      "id": "GHSA-RO-2026-0003",
+      "package": "requests",
+      "modules": ["requests"],
+      "vulnerable_versions": ["<2.32.0"],
+      "fixed_version": "2.32.0",
+      "symbols": ["requests.get", "requests.post"],
+      "severity": "HIGH",
+      "title": "Credential leak on cross-origin redirect",
+      "description": "Auth headers are forwarded to a different origin after redirect.",
+      "cwe": ["CWE-522"]
+    }
+  ]
+}
